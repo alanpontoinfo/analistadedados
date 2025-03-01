@@ -1,0 +1,860 @@
+Economina Financial by: sriram chundi
+
+
+what this course covers:
+-key concepts
+-capital markets and valuations(avaliação de ações)
+-business strategy and financial statements(demonstraçoes financeira)
+-analyzing financial statements
+-capital budgeting and cash flows
+-Business cycle and industry analysis
+-esg:environmental, social, and corporate governance
+-macroeconomics, fiscal policy, and monetary policy
+-portfolio diversification and management
+-alternative investment types
+
+Price of Money
+
+Magic box
+  -outputs $1.00/day (also $5, $20 models)
+  -runs forever
+  -how much woukd you pay for this box?
+
+Rename the box, savings account
+
+online savings account
+ 1.05%
+annual percentage yield
+
+7-month no-penalty cd
+ 1.00%
+annual percentage yield
+
+
+7-year high-yield cd
+ 1.10%
+annual percentage yield
+
+
+percentage Notation            |  Decimal Notation
+interest Rate / year   1.05%        0.0105000
+interest Rate / Day   0.00288%      0.0000288
+
+
+interest = Principal * interest Rate
+
+
+what amount generate $1.00 of interest / day?
+
+principle = $1.00/0.00288%
+
+principle = $34.761.90
+
+
+-Buy a home
+  -$100,000 purchase price(makes math easy)
+  -$20,000 down payment
+  -$80,000 mortgate(oan secured by home)
+
+-mortgate, (loan secured by real state)
+  -$80,000
+  -20 years
+   -payment(pmt=), interest and principal
+
+
+20 year mortgate
+ principal         80,000.00
+ rate(yearly)      10%
+ payment(yearly)  ($9.396.77)
+
+Totl interest paid ($267.935.40)
+
+         2019        2020       2021           to 2039
+borrow   80.000.00
+
+payment            ($9.396.77)  ($9.396.77)
+
+balance  80.000     78.603        77.067
+
+80.000.00 * 10% = 8.000
+9.396.77 - 8.000 = 1,396.77
+
+balance = 80,000.00 - 1,396.77=  78.603
+
+
+
+key concepts
+-return on investment(ROI)
+-time value of Money
+-net present value
+
+
+Return on investment (ROI)
+-would you rathers make a return of $1000 or 25% on an investment?
+-ROI allows you to compare the "efficiency" of one investment to that of another investment
+-ROI measures the amount of return of an investent relative to the amount invested
+
+formula ROI
+ROI = (current value of investment-cost of investment)
+                        cost of investment
+         
+ exemp: (150-100)/100 = 0.5, or 50%
+comprou a casa por 100 revendeu por 15
+
+return on investment(ROI)- some limitations - which is the better investment?
+
+-investment 1: invested $1,000 in some real estate and sold for $1,200 one year later
+  ROI = (current value of investment-cost of investment)
+                        cost of investment
+  ROI = (1.200-1,000)/1,000=20%
+-investment 2: bought $2,000 of stock and sold it for $2,800 three yeasr later
+  -ROI = (current value of investment-cost of investment)
+                        cost of investment
+  -ROI=(2800-2000)/2000 = 40%
+
+de acordo com o ROI o segund investimeto é melhor, bu twhe you look at the tmie  considerations, you spend three times as much time to make that 40% ROI as you did for the 20% ROI.
+Hence, ROI is not the say all be all measure of the value of an investment.
+
+Time value of money - continuous compounding
+
+- savings account, 10% 20 years
+
+calculate comounding interest
+year    |   Account balance
+0               1.00
+1               1.10
+2               1.21
+3               1.33
+4               1.46
+5               1.61
+6               1.77
+7               1.95
+8               2.14
+9               2.36
+10              2.59
+11              2.85
+12              3.14
+13              3.45
+14              3.80
+15              4.18
+16              4.59
+17              5.05
+18              5.56
+19              6.12
+20              6.73 
+
+grafico exibindo a curva
+account values, 10% return   
+
+Time value of money: would you prefer $1 tody or in 5 years?
+
+Tomorrow's cash flows are worth less than today's because of:
+
+-time value of money:
+future value = present value * (1 + interest rate)_nperiods
+
+-riskiness of future cash flows and impact of inflation
+
+present value = future value / (1 + interest rate)_nperiods
+
+
+net present value ( inflows vs outflows)
+
+
+
+vamos supor que ele comprou uma máquina por 10000
+isto é refletido em ano zero com -100000 no fluxo de caixa que é custo negativo
+em 1 ano a maquina retornou 2000 em lucos, e em  ano subsequente, 3000, 5000 e  70000 dolares
+
+NPV > 0
+
+Discount Rate
+
+year     | cash flow                   NPV       | 4.704  
+0            -10.000               discount rate   5%
+1            2000
+2            3000
+3            5000
+4            7000
+
+se eu somar este valor eu ficaria 7000 liquido. contudo, contabilidade para a taxa de dde disconto, que supoe a perda de dinheiro devido ao incremento da taxas de juros, nosso liquido é soment 4.704. Apesar ele é menor doque o 7000 que we iriamos ter cecebido se dinheiro não perdesse vlor
+
+Understanding finacial markets
+
+what are financial markets?
+-virtual markets
+-physical markets
+
+mercado financeiro é o lugar onde 2 ou mais pessoas vem juntos para trocar bens ou serviços
+
+the effect of financial markets?
+financial markets are vital for the growth of firms, as well as achiviing individual consumers desire
+
+many firms produce goods and services that individuals would not be able to acquire themselves.
+por isso o mercado financeiro passa a existir para que o consumidor possas acessa-lo
+
+overview of stock and bond markets
+bonds(titulos)   stocks
+
+what is a stock
+stock is a security that represents a portion of ownership in a company
+so people can only purchase stocks from a ublic or private type of company
+public companiesare companies that their stock on a public platform, or anybody con puchase it. ex: amazon , tesla
+
+what is a bond
+bonds can be issued by a variety of places, unlike stocks which are only issued by firms.
+bonds can be issued by firms, governments, states, ond other governent-affiliated organizations
+bonds has four resurces
+-their issue price -> whitch is what tou buy it for.
+-the face value -> wich includes the price you're buying it for, as well as the interest payments.
+-the coupon rate, or the interest rate -> which is the set of payments you'll be receiving over ther course of the bond
+-the coup date, which is when thes paymens will be made to you
+-and the maturity date, which is when a lifetime of the bond is expended and the issue price is returned for you
+bonds are use tipically to fund projects for these organizations
+they only last for a ertain period of time, as determined by the maturity rate when the bond is issued, and they either have fixed o variable payments. As a result, bon issuers lower their price.
+quando governo invete em uma area sem fundos suficiente pode emitir titulos para fazer fundos
+
+
+Differences betwenn the two
+-stocks:
+  -more risky
+  -issued by firms
+  -ownership
+     -dividends & apreciation
+  -decision making
+
+bonds
+  -less risky
+  -issued by firm and governments
+  -debt
+     -payments
+   -no decision making
+
+bankrupt(falido)
+
+
+valuation
+2 key metrics: cash flows & Risk
+cash flows are total revenues we'll  be making, along with the sunken(irrecuperavel/afundado) costs of bursting(explosao) and asset(attivos).
+
+Risk can be represented with the chance for financial losses or the chance that a company even goes bankrupt and you lose your value
+
+Stock valuation
+There is  lot of uncertainty when valuing a stock, and part of this is due to the fact that ther's so mny different ways to value a stock.
+for example there's the discounted cash flow method, which we'll be looking into next..
+there' the constant growth divided by divedend discount method, and there's also techniques comparables, which we'll be discussing, such as price to earnings, price to books and price to sales.
+As a result, there's no standard convention to measure a stock, and when people are comparing stocks, it's best to use the most information you hav available to you and try and do all thesse technique, wich is, of course, unviable in the real world though.
+
+Discounted cash flow(DCF)
+Where we take all the expected cash flows for an asset, including the sunken costs and the revenues that it slightly generate in the future, and discount these values, meaning we adjust the value os money in accordance with macroeconomic features like inflation and so on to ensure that the future value of money is converted to the present value of money
+
+Pros
+-theoretically the best
+-not influened by temporary conditions
+-best with limited information
+
+Cons
+-can vary over a wid range
+-time-intensive relativve to some other valuation techniques
+-forecating(prever) future perfoermance is very diifficult
+
+valuation frameworks-multiples(or comps)
+-what are comps?
+comps are also called comparables or multiples, and it is a valuation technique that is based on comparing companies .
+it invlves using metrics such as price to earnings, price to books, and othe relevant within an industry ratis to that of similar companies in the same industry
+
+-price-to-earnings(p/e)
+-price-to-sales(p/s)
+-enterprise value-to-eargnings before interest  taxes & depreciation (EV/EBITDA)
+-price-to-cash flow
+-p/e-to-eargnings growth
+
+So these are examples of certain types of comps.
+
+Business Strategy
+
+- a plan of action or policy designed to achieve a major or overall aim.
+   -time to develop a coherent economic strategy" 
+
+Mission statemnt: summary of the aims and values of a comany
+
+elements of a mission statement
+ -purpose
+ -target audience
+ -explanation of the business
+ -unique
+ -values
+
+ex:
+Microsoft
+business strtegy : "to empower every person and every organization on the planet to achieve more"
+
+walmart
+business strtegy : "to save people mone so that they can live better
+
+company analysis: swot
+strengths
+1-competitive advantage?
+2-assets benefit us?
+
+weakness
+1-what do we lack?
+2-what do our competitors do better?
+3-resource limitations?
+
+threats
+1-new legislature threaten operations?
+2-is there emerging competition?
+3-changing consumer attitudes?
+
+oppotunities
+1-what technology can we integrate?
+2-emerging press and media?
+3-are there underserved markets to enter?
+
+A SWOT analysis helps a company position themselves and undestand whre they are in the marketplace against  their competitors.
+
+Industry analysis - swot analysis
+-stregths: refer to the internal attributes and resources of our compnay that propel you toward sucess. they represent the areas where your organzation outperforms others, evidnt to both your customers and competitors
+
+weaknesses: are the facets that hinder faviable outcomes for you business. they pinpoint areas requiring improvement, shedding light on where your company falls short compared to competitors.
+
+oportunities
+opportunities encompass exernal elmens that can be leveraged to your advantage. these are prevaling market trends that, when capitalized upon using your atrengths, can enhance revenue and provide a campetitive edge.
+
+threats: denote external factors that jeopardize your organization's sucess. these encompass advantages held by competitors. to mitigate these risks, it's crucial to emply your strenghts strategically
+
+BCG Matrix => business intelligence tool that helps organizations assess their product portfoli's performance and potential
+-there are four different categories - stars, cash cows, question marks and dogs
+
+stars-> these are products with high market shares that are in fast-growing markets. They have the potential to generate sognificant profits due to their position in this industry. So if a company dominates 90% of the market share for a nich that is growing very fast the product that they're selling is likely to be star.
+
+cash cows > are products that have hight market shares in markets that aren't growing so fast. while they may not have as much growth potential, they generate steady cash flow, witch is often desirable for businesses.
+so similar to stars, but they don't have the future potentia and insead they're making money right now
+
+Question marks -> are prodcts that companies may have low market share in, however the market is likely to expand in the future.
+They require consideration as to whether a company should invest in it to develop it's market share and potentially create it into a star or to left it go and become a dog
+
+Dogs -> are products that have a low market share and a market grotw in a market that isn't growing
+they won't generate significant profits for the company and if a company neds to reduce some of its services that its offering, the dogs are the first to go.
+
+The bcg matrix can help a company allocate its resources effectively by suggesting strategies for products or services that fall into each specific quadrant.
+
+
+Porter's generic strategies
+are a set of strategic approaches developed by michael porter, as the name suggest, to help business understand where they stand in the industry and help them gain a competitive advantage.
+it strategies have 4 categories
+
+total market = cost and diferentation
+cost leardership -> is a strategy that focuses on becoming the lowes cost producer in an industry.
+this is achieved by economes of scale, efficient operations, and cost controls. this can be attract a wide consumer custu=omer base and potentially deter new entrants from  the industry.
+
+Then we have differention-> aims to create a unique or distictive product unlike others on the market. And this can be achieved through unique product design, branding, or evn customer service. By offering something thats valuable and unique, companies an often charge premium prices and customers will be willing to pay
+
+niche market = cost focus and differention focus
+these startegies often involve concentrating efforts on a specific market or a specific segment
+
+intro to financial statements
+-statement of profit or loss(income statement)
+-statement of financial position(balance sheet)
+-cash flow forecast
+These are the three main financial statements that all companies need to report or fiancial documents rather.
+
+statement of profit or loss: tis a financial statement that summarizes the revenues, cost and expenses of a company over a period of time
+-sales and expenses
+-purpose : link each item with its cos of production.
+-over a financial period (durante o periodo financeiro)
+
+Staement of profit or loss for the year ended 31 december 20xx
+
+sales revanue                    1.500
+cost of sales                     (500)
+gross profit                     1.000
+expenses                         (300)
+profit before interest and tax   700
+interest                         (100)
+profit before tax                600
+tax                              (200)
+profit for period                400
+dividends                        (150)
+retained profit                   250
+
+
+statement of financial position
+we'll divide at in two parts, assets and liabilities (ativos e passivos)
+
+
+assets
+-non current -> are assets that a company will be holding for a period greater tha 1 year. This includes things like the factory that it's built on, any of the tecnical equipment they have, and so on.
+-current assets -> on the other hand, are assets that a company will hold for less than a period of a year. thi includes things cas, debtors, and stock.
+
+non-current assets                      $m      $m
+
+property, plan and equipment            900
+accumlated depreciation                 (100)
+non-current assets                              800
+
+current assets
+cash                                     600
+debitors                                 400
+stock                                    100
+current assets                                   1.100
+total assets                                     1.900
+
+
+liabilities(passivos)
+
+-non current -> are liabilities that a company will be holding for a period greater tha 1 year. 
+-current liabilities ->  are liabilities that a company will be holding for a period of 1 year. 
+things like bank overdraft, wich are essentialy drawing for a bank account until it gets to a negative point, is a current liability
+shareholder(acionist)a
+
+net assets = total assets - total liabilities
+assets = labilities + shareholder equity(patrimonio liquido)
+
+current liabilities
+bank overdraft                 200
+trade creditors                100
+other short-term loans         200
+current libilities                   500
+
+non-current liabilities
+borrowwings--long term         300
+non-current liabilities              300
+total liabilities                    800
+net assets                           1.100
+
+Equity
+share-capital                   100
+retained earnings               1.000
+total equity                          1.100
+
+
+Cash flow forecast
+The cash flow forecast is for a horte period time, and it talks about all the money going in and out of a company for, in this case, three months. So, it allows advisors to assets the individual inflows and outflows of a company to deterine how important certain things in the company are and how expensive they are and how they can be cut down to improve the toal net cash flow of  company. It also allows for amonth by month comparison to see the growing effects of the comany's operations
+-why use comps?
+
+cash flow forecast
+
+all figures in $m    january    february    march
+opening balance        8           2         1
+cash inflows
+cash sales revanue      300        300        300
+tax refund                         3
+total cash inflows     300         303       300
+
+cash outflows
+rent                    2
+packaging               15          15        15
+salaries and wages      50          50        50
+cost of sales           220         220       220
+healing and lighting    4           4         4
+delivery                15          15        15
+total cash outflows     306         304       304
+
+net cash flow           (6)         (1)       (4)
+closing balance          2           1        (3)
+
+
+Fiancial statement analysis
+
+now we'll be looking at how to analyze these finacial statements 
+three techiniques that we can to use:
+1-Ratios  -> so there's four types of ratios, profitability ratios, wich measure your return on your investment, your liquiy ratios, which measures how easily you can move you money around, activity ratios  wich are representation of your day to day operations, and levarege ratios, wich represent  how well you can utilize debt.  
+
+profitability ratios -> are financial indicators used to evaluate  company ability to generate profits relative to its revanue, assets, and equity.
+
+key profitability ratios include:
+gross profit margin = (revenues-cost of good sold)/revenues -> measures profit after deducting production costs or cost of goods sold,
+net profit margin = net income/revanues ->  and the net profit margin, wich assesses overall profit after all expenses
+return on assets(ROA) = net income/total assets
+return on equity(ROE) = net income/equity
+
+the two last return on assets and equity show how efficiently a company generates profits from its asset and shareholder equity respectively
+
+
+Liquidity ratios-> are a finacial metrics that assess a company1s ability to meet its short-term financial obligations. they measure the firm's ability to convert assets into cash quickly to recover or cover immedite liabilities. current liabilities , and the quick ratio, wich excludes less liquid assets like inventory. These ratios provide insights into a company financial health and its capacity to handle unexpected expenses or downturns
+
+-current ratio = (current assets/current liabilities)
+-quick ratio=(currrent assets-inventory)/current liabilities
+
+High liquidity ratios generally indicate better short-term financial stability and flexibility however they aren't the ultimte abalysis technique for liquidity.
+
+Asset utilization (activity) ratios -> and they analyze how efficient a company manages to use its assets to generate revanue. They provide insight into how well a company utilizes its rresources and operations. for example:
+
+average day in inventoy =[(starting inventory + ending inventory)/2]*days/2
+
+inventory turnover = (COGS/average inventory) -> which measures how quickly inventory is soold and replenished.
+
+average colletion period =(AR)/(credit sales/365)
+
+average days payable = (average acounts payable *days)/COGS
+cash conversion cicle = average days inventory + average days receivable - average days payable
+
+Activity ratios hel business optimize their operations, manege working capital, and identify areas whee improvements can lead to increased productivity and prfitability
+
+Debt(leverage) Ratios
+
+debt-to-total assets = totl debt/total assets -> which measures debt relative to the total assets a company has. This ratio helps assess he company's ability to handle its debt obligations, and also provides valuables information for investors and creditors regarding the firm's finacial stability and its transfer risk
+
+times interest earned = operating profit/interest expense
+
+fixed chage coverage = operating profit/fixed charges
+
+debt ratios are financial metrics that evaluate a company level of debt in relation to its equity or assets. these ratios offer insights into a company's financial leverage and risk.
+
+
+Consolidated income statement for tests (the wall street, 2022)
+
+fiscal year is january-december. All values US |   2022   |  2021     |   2020      |    2019    |     2018
+sales/revanue                                      81,642    53.823       31,589       24,578         21,641
+sales growth                                       51.35%     70.67%      28.51%       14.52%          --
+cost of goods sold(COGS) inc D&A                   60,609     40,217      24,908       20,509         17,419
+COSGS excluding D&A                                56,862    37,306       22,564       18,355         15,518
+depreciation & amortization expense                3,747     2,911        2,322        2,154          1,901
+depreciation                                       2,420     1,910                                     -
+amortization of intangibles                        1,327     1,001                                     -
+COGS growth                                        50.70%    61.48%       21.44%        17.74%         -  
+gross income                                       20,853    13,606       6,630         4,069          4,042  
+gross income growth                                53.25%    105.22%      62.94%        0.67%           --
+gross profit margin                                25.60%     -            -              -              -
+SG&A expensive                                     7,021      7,110        4,636         3,989          4,295
+research & Development                             3,075      2,593        1,491         1,343          1,460
+other SG&A                                         3,946      4,517        3,145         2,646          2,834
+SGA GROWTH                                         -1,25%     53.33%       16,22%        (-7.12%)        -
+EBIT                                               13.832     6.496        1.994          -             (-253)
+Unusual expensive                                  150        (-40)          36             189            114
+non operating income/expenses                      (-69)
+non operating internet income                      297
+interest expense                                   191
+interest expense growth                            (-46.52%)
+gross interest expense                              191
+interest capitalized                                 -
+pretax income                                       13,719
+pretax income growth                                116.20%
+pretax margin                                       16.64%
+income tax                                          1,132
+income tax-current domestic                         62
+income tax - current foreign                        1,266
+income tax-deferred domestic                        27 
+income tax- deferred foreign                        (-233)     
+other after tax income (expensive)                   27
+consolidated net income                              12,614
+minoritary interst expensive                         31
+net income                                          12,583
+net income growth                                   127.59%
+net margin                                          15.45%
+net income after extraordinaries                    12,583
+net income avalible to commo                        12,583
+EPS (basic)                                          3,62       
+EPS (basic) growth                                   122.04%
+basic shares outstanding                             3,130
+EPS(diluited)                                        362
+EPS(diluited) growth                                 122.04%
+diuited shares outstanding                           3,475
+EBITDA                                               17.570
+
+
+
+calculate table
+gross profit margin = (revenues-cost of goods sold)/revenues
+net profit margin = net income/revenues
+
+
+
+
+
+ Horizontal analysis    
+The technique Horizontal analysis or trend analysis of financial statements involves comparing finacial ratos and benchmarks or any item over a numbe of accounting periods.So horizontal analysis allows the assesment of relative changes in different aspects of the financial statements to be seen over time
+
+ commom size analysis - vertical analysis
+financial statements show each line item expressed as a pecentage of a base figure within the statement, and it's used for vertical analysis.So comom sie financial statements help to analyze and compare a company's performance over several periods
+the commom size percentags can subsequently be used to compare those of competitors and determine how a company is performing relative to the rest of the industry.
+A commom size income stateent is an income statement in wich each line item is expressed as a percentage of the value of revenue or sales.
+
+A common size balance shhet is a balance shhet that displays both a numeric value and relative percentage for total assets
+ver exemplo da tabela excel na foto do celular
+
+Capital budgeting
+
+Le's say you have the opportunity to install solar panels on your house.
+everyday
+
+solar panel investment
+costs:$10,000
+
+should you make the investment?
+
+so first, what is capital budgeting?
+is the process of evaluating and selecting long term investment projects like solar panels tht involve significant financial outlays.its's a decision making processes for business and individuals to determine which projects are whorth pursuing based on their potential to generate returns or benefits over and extended period. 
+Capital budgeting helps organizations and individuls allocate their financial resource effectively maximizing the value of investments and minimizing the risk of making poor choices. It's a systematic approach that considers not only the immediate costs and returns but also the long term impact on financial performance and overall strategic goals or an individuals or business.
+
+why do companies make investments in fixed assets?
+-increase capacity
+-government regulations
+-innovation
+-new factory
+-cleaner emissions systems
+new R&D facilities
+weel, investments can increase capacity, they can overcome some regulation, they are innovate, which can give companies a unique advantage.
+
+why it's(capital budgeting) important for valuation
+three reasons:
+first of all, it helps the resource allocation. there's limited financial resources and capital budgeting can help ensure companies focus on the most promising investments. Allow also companies to plan  for the future by considering the effects of their investment using tools that we'll discuss later, over an extended period and manage risk while maximizing returns.
+
+
+How do companies pay for investments in fxed assets?
+with:
+-cash flow
+-debt
+-equity
+
+Two more  concepts
+IRR (internal rate of return)
+  -the expected return of an investment
+  -is a finance term that helps us assess how lucrative an investment or project could be
+  -is the annual growth that an investment is expected to make.
+  -if the IRR is higher than what you could earn from a safe investment, like a bank depositvor investing in some safe stocks, the the project might be worth the risk. In short , IRR help us decide if a business idea is a good investment.
+Cost of capital
+-the cost of making an  investment as to other investments
+
+internal rate of return > cost of capital
+   -then it's a good investment
+
+
+capital budgeting is strategic
+this involves either individuals or business looking at an oportunity to make an investment and tinking it' a good idea. Then management reviews and prioritizes projects based on their economic viability. So after looing at the potential cash flow projections, managemet will either decide if an investment is positive or negative for thee company and thus decide to prioritize or ignore it. Then funds are allocated on these projects to ensure the development and the results are tracked to ee if the projections are accurate. If projectons are inaccurate, funds are either removed, reduced, or increased.
+
+capital budgeting cash flows
+
+-initial inestiment = (cost of new asset) + (installation cost ax rateassociated with new asset)-(after-tax proceeds from sale of old asset*) + or - (change in net working capital)
+
+  -*After tax proceeds from sale of old asset = sales price - tax on capital gain
+  -tax on capital gain = (sales price-book value) x tax rate
+  -chage in net working capital = difference between change in current assets and change in current
+
+The value of an initial investment is equal to the cost of the new asset plus the installations cost associated with the new asset minus the after-tax proceeds from seeling the old asset.
+Keep in mind the after-tax proceeds from selling an old asset is equal to the sale price minus the tax on capital gain. Bua all you need to undestand is that is considered when calculating the price  the initial investment
+
+changes in working capital:
+if curreent Assets increase, it's a use of working capital
+if current liabilities increase, it's source of working capital
+an increase in net working capital is source of cash
+a decrease in net working capital is a use of cash
+
+so capital budgeting results in changes in working capital.
+if a current asset increases in value, it's a use of working capital
+if current liabilities increase, it's a source of working capital. that means current assets are cash, or inventory, which are uses of capital, and liabilities are things like loans, which are sources of working capital. 
+an increase in networking capital means it's a source of cash for the company, and a decrease is a use of cash.
+
+- three primary methods to decide whethe or not to invest:
+   - payback period
+   -NPV
+   -IRR
+
+
+
+
+
+
+capital budgeting techniques
+payback period -simple math. how long does it take a company to recoup it's investment in fixed assets.
+
+                                        cash flow             cumulative cash flow
+initial cot of Ford factory            (5,000)                     (5,000)
+cash flow-year 1                         100                       (4,900)
+cash flow-year 2                        1,000                      (3,900)
+cash flow-year 3                        2,000                      (1,900)
+cash flow-year 4                        2,000                        100
+cash flow-year 5                        2,000                        2,100
+cash flow-year 6                        2,000                        4,100
+
+
+you are planning on installing your solar panels. these are the predicted cash flows:
+
+                                     
+                 
+                                       cash flow             cumulative cash flow
+initial cost of solar panels           (10,000)                     
+cash flow-year 1                         2,000                       
+cash flow-year 2                         2.500                     
+cash flow-year 3                         3,500                     
+cash flow-year 4                         4,000                       
+cash flow-year 5                         4,500                       
+
+
+
+your cost of capital  12% -> that means any other investment we could to invest in would generate $1,200 in net present value
+                               cash flow             cumulative cash flow
+initial cost of solar panels           (10,000)                     
+cash flow-year 1                         2,000                       
+cash flow-year 2                         2.500                     
+cash flow-year 3                         3,500                     
+cash flow-year 4                         4,000                       
+cash flow-year 5                         4,500                       
+NPV                                      $1,219  =NPV B1,B3:B8
+
+if our investment on the solar panels is greater than our other cost of capital, then it's good investment. so using discounting our cash flows, we can find a value. We find that the value of solar panels, the net present value of solar panels is 1,219, which is greater than the value of, which is greater than our cost of capital
+
+
+
+what is Maroeconnomics
+is a branch of economics that studie the overall behavior of an economy cocousing on large scale factors like economic growth, inflation, unemployment, and national income. It examinies how policies and events impact the economy as a whole rather than individuals such as individual nusiness or indivdual markets.
+some of they factors in macroeconomics are the size of the economy, economic growh, govenment policy, fiscal policy, monetary policy, inflation, and international trade.
+
+The business cycle 
+is very interwined with economics. everything is cyclical. 
+so the business cycle, also known as the economic cycle, is the recurring pattern of fluctuations and an economy's overall activity over time. It can be divided into four main phases:
+->early  |  Mid |  late  | recession
+verificar imagem do celular intdustry analysis
+
+
+Key factors of  the macro economy
+- gross dmestic product(GDP)
+- employment/uneployment
+- inflation
+- interest rates
+
+Measuring GDP
+GDP =C + I + G + (X-M)
+
+- C = consumption(private)
+- I = investment
+- G = government spending
+- X = exports
+- M = imports
+
+-private consumption
+-gross investment
+-government investment
+-government spending
+-exports
+-imports
+
+what is GDP?
+GDP, or the gross domestic product of a company, represents the total cost of goods being sold in that caoutry or in that nation in a period, typically one year. So GDP is calculated as consumer spending, which is C, investments made, wich is I, government spending, wich is G, and the difference between exports and imports, which is represented as X minus M.
+
+Cyclicals vs Defensives
+cyclical
+ -commercial services
+ -consumer durables
+ -consumer services*
+ -eletronic technology
+ -energy materials
+ -finance
+ -industrial services
+ -non-energy materials
+ -process industries
+ -producer manufactoring
+ -retail trade
+ -technology services
+ -transportation
+
+Defensive
+ -communications
+ -consumer non-durables
+ -consumer services*
+ -distribution services
+ -health services
+ -health technology
+ -utilities
+
+Something to note about industries and the business cycles.
+certain industries and companiesare divided into categories called cyclical or defensive.
+Cyclical industries are industries which face repercussions of the business cycle. During certain times, they will be in an upward boom, and during crtain times, they may not be able to operate at all.
+Examples of this include the hotel industry, resorts, dining, and any other excessive industries that are created by consumer wants.
+
+Defensive industries, on the other hand, are things that are'n too heavily affected by the business cycle. This is because they're necessary for human operation. Things like thiis include health servicces, utilities, health, technology, and so on.However, some industries are in between cyclical and defensive. for example, consumer services are somewhat cyclical and somewat defensive. For example, things like accomodation are cyclical and defensive to some extent. Some houses in certain areas, which may be seen as luxury, may be cyclical when it comes to renting or on AIRNB. However, basic accomodation is defensive since humans need it all times.
+
+Unemployment
+So unemployment is spli into three categories, cyclical, structural, and frictional
+
+Cyclical unemployment results from fluctuations in the overall economy. When the economy enters a recession or a downturn, demand for goods and service decreases, causing businesses to scale back production. As a result, they lay off workers leading to ciclical unemployment.
+Consider the construction industry During an economcc boo, there's a high demand for new homes and infrastructural projects. Construction companies hire more workers to meet this growing demand. However, when a recession hits, the demand for new projects drops, causing these companies to cut back on their workforce, rsulting in cyclical unemployment for construction workers.
+Similarly, in the tourism sector, when the economy is thriving, people have more disposable income to travel and explore. This leads to inreased demand for flights, hotels, enertainment like movies, and so on.
+Yest, in and economica downturn, people tighten theri budgets, leading to reduced travel and low demand for these tourism-related services. And as a result, there are losses in jobs inthis industry.
+In both examples, cyclical unemployment is closely tied to the fluctuations in the business cycle which we saw earlier.
+As the economy cantracts and expands, industries that heavily  rely on consumer spending and investments can experience shifts in employment levels due to the changes in demand.
+
+Structural unemployment
+- lack of demand for skilled labobr
+-typewriter example
+-AI?
+
+Frictional Unemployment
+-unemplment between graduation and/ or jobs
+-improved job searching techineques
+
+what about inflation? 
+
+REAL(GDP)=Nominal(GDP) - inflation
+
+The players
+so who is really palying a role in tthe macroeconomy?
+-governments and central banks develop and implement policy.
+-companies and consumers are impacted and must plan and react.
+
+Government policies
+so, governments implement fiscal policy, whereas banks implement monetary policy
+
+Whats is monetary policy?
+
+Economic stability and grohth   -> unstable economy -> central bank(injects monetary policy(controlling the money suply)) -> economic stability and growth
+
+Monetry policy involves a bank's managemnt of a country's money supply and interest rates to influence economic activity. By adjusting interst rates and employing tools like opn market operations, central banks can control inflation, encourage borrowing, and spending during slow economic periods using expansionary monetary policy, or cool down an overheating economy using a contractionary monetary policy.
+Expansionary monetary policy is when central bnks reduce interest rates to make borrowing money easier for consumers. This is because the interest they would havee to pay on a loan rdues, taking the loan much more appealing.
+Contractionary monetry policy, on the other hand, is wen central bnks increase interest rates to make borrowing more epensive, causing borrowers to pay more interest on their loans, deceasing the appeal of these loans.
+
+An intereting example of monetay policy in action is japan's use of interest rates to stimulate the economy. Typically, in a country that is using expansionary mnetary policy, interest rates could be lowered for 3% to 2%, for example, to encourage borrowing. japan, however, decided to take an unconventional approach. The bank of japan set an interest rate of negative -0.1. This is extremely unique and a chice made by japan's governament to meet their specific needs. This was their attempt to overcome deflation, which was a big issue in japan. By making interest rates negative, it makes t more economical to borrow and spend money than just holding on to it. As a result, people kept taking on loans because it was generating that money, and as a result, they started spending more, which stimulated japan's economy.
+
+Fiscal Policy
+Fiscal policy involves how governments use taxes and spending to influence the country's economy. By adjusting tax rates and government spend levels, govermntsd aim to sttimulate the economic growth during downturns, using expansionar fiscal policy, or control inflation during priods of high growth, using contractionary fiscal policy. So expansionary fiscal policy, similar to expansionary monetary policy, is when governments spend more money to increse the crculation of money within the circular flow of income wich creates jobs and more.
+Contractory fiscal policy is when governments incrrease interest rates to decrease the dispossable income of people to reduce their spendings.
+An example of how governments can spend their money is through investments in military, investments in infrastucture, or investments in social programs, which stimulate the economy and can be called injections. The ways they can influence tax rats are through increases or decreases in corporate tax, and increases or decreaes in individual tax, like income rates.
+Fical policy, as we mentioned earlier, can be expansionary to promote spend, or contractionary to reduce spending.
+As yo can assume, monetary policy, which is influenced by the ccentral bank, is much more fast-acting than fiscal policy. Controlling interest rates is much faster than starting infrastructural projects, which can take years to see the effects of. Because interest rates can directly affect money circulation, they affect much faster. wWhereas things like infrastructural projects, their benefits come from incresed emplyment and injections into the economy in the form of avalable buildings where companies can be relocate. This often takes time for companies to find these locations to rrelocate, and additionally, emplyment doesn't immediately increase the economy.
+
+construction & diversification
+
+Diversification is essencially the process of purchasing assets for diffrent asset classes to expand the number and type of securities in your portfoio.
+
+Systematic vs unsystematic risk
+well, there's systematic and unsystematic risk.
+systematic risk is a market risk, wich is nondivesabe, wich means you can get rid of it if you diversity, and it items form market-wide-risks.
+unsistematic risks, on the other hnd, are company or industry-specific risks that are inherent to a secific investment.
+systematic risk incorporates things like interet rate changes, inflation, recessions, and wars among other major changes.]For exemplo, the global financial crisis is a great example of systematic risk.
+unsistematic risk is a company or industr-specific risk that is inherent with each investment,.
+systematic risks include things like inflation risk, interest rarte risk, exchage rate risk, and  things like pandemics and war. 
+unsystematic risks are things like business risk, financial risk, default risk, and liquidity rysk, which are specific to certain companies
+
+How do you measure portfolio performance?
+satndard devaiton and probability distribution
+active vs passive management
+
+Aternative invetsments
+
+types of alternative investments
+-real state 
+-equipment leasing
+-hedge funds
+-commodities, precious metais,
+-cryptocurrencies, and collectibles
+-nfts
+
+characteritiscs of alternative investments:
+-liquidity
+-sold by financial advisors and broker-dealers, mostly to "accredited investors"
+-ublic or private ssets, but rarely publicly-traded
+-limited correlation to tra ditional assets
+-sophistication
+-high risk premim
+-fess commensurate with active managements
+
+
+what
+
+-process to evaluate major investments
+-help choose which investments to pursue and wich to avoid
+-how to minimize risk
+
+

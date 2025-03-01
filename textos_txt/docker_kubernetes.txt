@@ -1,0 +1,977 @@
+comandos usado no docker - pesquizar
+docker build .
+
+pip freeze > requirements.txt
+
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
+
+APOS CRIAR OS ARQuivos .yaml na pasta manifests
+dê o comando kubectl apply -f ./  
+
+
+98.09 + 59,71 + 120,98 + 93,32
+
+
+comandos docker
+
+docker info
+docker version
+docker login
+
+Docker CLI Executando e parando
+
+docker pull [nomedaimagem] - pull an image from a registry
+docker run [nomedaimagem] - Run Containers
+docker run -d [nomedaimagem] - Detached mode
+docker start [nomedocontainer] - Start stopped containers
+docker ps - listando containers
+docker ps -a list running and stopped containers
+docker stop [nomedocontainer] - stop containers
+docker kill [nomedocontainer] - kill containers
+docker image inspect [ nomedaimage] - Get image info 
+docker run --memory="256" nginx - Max memory
+docker run --cpus=".5" ngix - Max CPU
+
+#pull and un an nginx server
+docker run --publish 8080 --name webserver nginx
+
+#list the running containers
+docker ps
+
+#stop the container
+docker stop webserver
+
+#remove the container
+docker rm webserver
+
+Anexando shell
+
+docker  run -it nginx -- /bin/bash - Anexando shell
+docker run -it --microsoft/powershell:nanoserverpwsh.exe  - Anexando Powershell
+docker continer exec -it [nomedocontaiener] -- bash - Attach to a running container
+
+Limpnado
+
+docker rm [nomedocontainer] - REmoves stopped containers 
+docker rm (docker ps -a -q) - Remov all stopped containers
+docker images - List images
+docker rmi [nomedaimagem] - Deletes the image
+docker system prune -a - Remove all images not in use by any containers
+
+
+Construindo building
+
+docker build -t [name:tag] . --> Builds an image using a Dockerfile located in the same folder
+
+docker buid -t [name:tag] -f [filename] --> Builds an image using Dockerfile located in a different folder
+
+docker tag [nomedaimage] [name:tag] --> Tag an existing image
+
+Dockerfile - static html site
+
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+
+#build 
+docker build -t webserver-image:v1 . Este ponto'.' especifica a localização do Dockerfile ou um ponto se executar o comando da pasta aonde o arquivo está
+
+#run 
+docker run -d -p 8080:80 webserver-image:v1
+
+#display
+curl localhost:8080
+
+Dockerfile - Noode site
+FROM alpine -> Baase Image
+RUN apk add -update nodejs nodejs-npm  -> Install Node and NPM using the package manager
+COPY . /src --> Copy the files from the build context
+WORKDIR /src
+RUN nm install -> Run a command
+EXPOSE 8080 -> Adds metadata
+ENTRYPOINT ["node", "./app.js"] -> What to run
+
+       
+Docker cli - tagging
+. docker tag => Create a target image
+   . name:tag
+     . myimage:v1
+   . repository/name:tag
+      . myacr.azurecr.io/myimage:v1
+
+Add Dockerfiles no visual studios
+-Abroa ocom o comando CTRL+SHift+p - seleciona - paleta Dokerfile- responde algumas perguntas- criar os arquivos docker
+
+Pode fazer um build via terminal
+-docker build -t nodeapp:v1
+-docker run --rm -d -p 8080:3000 nodeapp:v1
+ou Via paleta de comando 
+-docker build
+-docker run
+
+
+Volumes
+docker create volume [nomedovolume] -> Creates a new volume
+docker volume ls  -> Liss the volumes
+docker volume inspect [nomedovolume] -> Display the volume info
+docker volume rm [nomedovolume] -> Deletes a volume
+docker volume prune  -> Deltes all volumes not mounted
+# create a volume
+docker volume create myvol
+
+#inspect the volumes
+docker volume ls
+
+# run a container with a volume
+docker run -d --name devtest -v myvol:/app nginx:latest
+. -v myvol:/app -> mapping the volume to a logical folder
+
+# run a container with a volume
+docker run -d --name devtest -v d:/test:/app nginx:latest
+
+d:/test: -> Specify a local folder
+# inspect the container
+docker inspect devtest
+
+yaml files
+www.yamlint.com valida YAML files
+
+Dockerr Compose
+Define and run mult-containers applications
+Define using YAML files]Run using the docker CLI with the compose plugin
+   .Docker compose
+Compose Specs
+   .https://compose-spec.io
+
+Definind 3 containers no files yaml
+
+version '3.9' -> optional
+
+services:
+  webapi1: -> Defines the hostname name
+    image: academy.azurecr.io/webapi1 -> image location
+    ports:
+      - '8081:80' -> lisening port
+    restart: always
+
+  webapi2:
+    image: academy.azurecr.io/webapi2
+    ports:
+      - '8082:80'
+    restart: always
+  
+  apigateway:
+    image: academy.azurecr.io/apigateway
+    ports:
+      - '80:80'
+    restart: always
+
+
+Docker compose - se Cases
+-Workloads that don´t require a full orchestration
+-Development and tests
+-Use of a service tha can run Docker Compose files
+  .Azure App Service
+  .AWS ECS
+  . Virtual Machine or VPS with the digitalocean or linode
+
+Docker compose command
+
+docker compose buld  -> Build the images
+docker ompose start  -> start the containers
+docker compose stop  -> stop containers
+docker compose up -d -> Build and start
+docker compose ps  -> List what's running
+docker compose rm -> Remove from memoy
+docker compose down  ->  Stop and remove
+docker compose logs  -> get the logs
+docker compose exec [container] bash -> Run a command in a container
+
+Comopse V2 - New commands
+Aversão 2 pode executar 2 instancias na mesma pasta
+
+docker compose --project-name test1 up -d -> Run an instane as a project
+docker compose -p test2 up -d -> Shorcut
+docker compose ls -> List running projects
+docker compose cp
+[containerID]:[SRC_PATH] [DEST_PATH] ->-> copy files from the container
+docker compose cp 
+[SRC_PATH] [containeID]:[DEST_PATH] -> cpy files to the container
+
+# build the service
+docker compose build
+
+#builds, (re)creates, starts, attaches to containes for a service
+docker compose up
+
+#list the services
+docker compose ps
+
+# bring down what was created by UP
+docker compose down
+
+
+REsource Limits
+
+services:
+  redis:
+    image: redis:alpine
+    deploy
+      resources:
+         limits: -> Pode aumentar uso
+           cpus: '0.50'
+           memory: 150M
+         reservatios: -> alocação inicial
+           cpus: '0.25'
+           memory: 20M 
+
+Environment variables
+
+     services:
+        web:
+          image: nginx:alpine
+          environment: -> Define para cada serviço
+            - DEBUG=1
+            - FOO=BAR
+
+# set an environment variable.
+docker compose up -d -e DEBUG=0 -> Este valor pode ser sobrescrito
+
+   services:
+     db:
+       image: "postgres:${POSTGRES_VERSION}"
+
+# set an environmet variable
+export POSTGRES_VERSION=14.3
+
+#powershell
+$env:POSTGRES_VERSION= "14.3"
+
+#Um arquivo nomeado .env
+POSTGRES_VERSION=14.3
+
+Networking
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+  db:
+    image: postgres
+    ports:
+     - "5432"
+
+compose file will see each other using their service names: web e db
+
+ports 8080 é alcançavel do lado de fora e web:80 está escutando o lado de dentro da rede docker na porta 80 . db pode alcancar web na porta 80 e Finalmente db somente expoem uma porta numero 5432 que é interno por web pode alcançar db usnado port 5432, mas db não é visivel  do lado de fora da rede
+docker
+
+
+services:
+  proxy:
+    image: nginx
+    networks:
+     - frontend
+   app:
+     image: myapp
+     networks:
+      - frontend
+      - backend  
+   db:
+     image: postgres
+     networks:
+       - backend
+
+networks:
+  frontend:
+  backend:
+
+proxy pode ver app porque faz parte da mesma rede mas não pode ver db
+
+Dependence
+
+services:
+  app:
+    image: myapp
+    depends_on:
+      - db
+  db:
+    image: postgres
+    networks:
+      - back-tier
+
+neste exemplo 'app' depende de 'db' assim o Compoe vai iniciar 'db' primeiro. e quando db este executando irá iniciar 'app'.
+
+Volumes - Named
+
+services:
+  app:
+    image: myapp
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+     - db-data:/etc/data  -> Mapeando
+    networks:
+     - back-tier
+
+volumes:  -> Definindo Volume
+db-data:
+
+você pode declarar volumes na seção volumes. Eles são chamado named volumes eels odem ser usado por todos aquelers serviços que estamos declarando no compose file. 
+Para usar um volume de um serviço mapeie ele para uma pasta local usando o nome do volume dois pontos e o caminho virtual no lado de dentro do containe.
+Opcionalmente podemos fazer o mapeamento  :ro read-only , :rw read-write.
+
+Volumes
+
+Podemos criar também um mapamento sem usar 'named volume' , Este mapeamento não pode ser compartilhado cruzando serviços,
+
+
+services:
+  app:
+    image: myapp
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+     - .db:/etc/data  ->declarado no nivel de serviço
+    networks:
+     - back-tier
+
+Restat Policy
+è também uma boa pratica definir uma politica de restart. Vamos dizer que vc faz um deploy de um par de app na VM e em algum ponto você precse intalar algum SO batches e voce precisar restatrt or reboot o servidor. O que irá acontecer ao compose app. Bem se não especificou uma politica de restart a  unica por padrão é : não diga que compose não vai restart os containers. Se eles forem desligar por reboot.
+Voce pode definir a politica para sempre ' always' desta maneira compose restarts os containers até sua remoção
+On failure um recurso que restats um container if o code exit indicar um erro
+unless-stopped -> restarts um container irrspective of the exite code but will stop restating when the service is stopped o removed
+
+Publish to Docker Hub
+# login to Docker Hub
+docker login -u username -p passowrd
+
+#tag the image previously built
+docker tag my-image k8sacademy/my_image:latest
+
+#push the image
+docker push k8sacademy/my_image:lates
+
+# pull the image
+docker pull k8sacademy/my_image:latest
+
+services:
+  app:
+    image: myapp
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restar: always
+
+
+kubernetes
+
+kubectl cluster-info -> buscar informações de instalação
+
+kubectl-context cheat sheet
+
+kubectl config current-context  -> get the current context
+
+kubectl config get-contexts -> List all context
+kubectl config use-context [contextName] -> set the current context 
+
+kubectl config delete-context [contextName] -> Delete a context from the config file
+
+kubectl config rename-context [contextName] [novo-context-nome] -> rename context name
+
+The declarative way vs the imperative way
+
+kubectl run mynginx --image=nginx --porta=80
+kubectl create deploy mynginx --image=nginx --port=80 --replicas=3
+kubectl create service nodeport myservice --targetPort=8080
+kubectl delete pod nginx
+
+Estes acimas foram comandos de forma imperativa. gora vamos ver o de forma declarativa.
+
+YAML files
+
+apiVersion: v1
+kind: Pod
+metadata:
+  nme: myapp-pod
+  labels:
+    app: myapp
+    type:front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+
+Criando Arquivos YAML
+ www.kubernetes.io/docs
+Creating new manifests
+creating a Deployment
+
+Namesapces
+-Allow to group resources
+ex: DEv, TEx, Prod
+K8s create a default workspace
+Objects in one namespace can acces objects in a different one
+ex: objsctname.prod.svc.cluster.local
+Deleting namespace will delete all the childs
+
+Master Node
+Master node é também chamado de control plane
+kube-controller-manager[O conrlodor dos contraladores - Ele executa controladores[Node controller - Replication Controller - Endpoints Controller - Service acount e Token controllers]]  - cloud-controller-manager[Interage com o cloud providers controllers[Node - para checar ocloud provider para detrminar se um node tem sido deletado no claud depois dele para de responder - Route-> para configurar rotas na infrastrutura de cloud - Service -> Para ciar atualização e deletar cloud providrs load balancers - Volume -> para criar anexar e montar volumes, e interagir com o cloud providrs para orchestrar volulme]] - kube-apiserver[a chave valor d data store onde o estado do cluster é armazenado -no etcd - REst nterface - Todos clientes interagem com ele nunca diretamente ai datastore] - kube-scheduler[ Assiste novos pods criados que tem nenhum node atribuido, e selecioana um node para ele excutálo] - |etcd[Age as o cluster datastore para armazenar estado- key - vaue store - Sem um databse or um datastore para aplicações usar- A unica fonte de confiança] -> Master componentes => Não executam conteiners no master-node
+Addons [ Dns - WebUi 9dashboard) - Cluster-level logging - contaner resource monitoring]]
+
+
+WORKer NODES
+
+os nodes executando os containers são chamado de work nodes - 
+quando um work node é adcionado ao cluster alguns serviços kubernetes são instalados automaticamente. O contaienr executando o kubelet e o kube-proxy Eles são necessarios para executar um pod e são gerenciado pelo master componentesno master node
+
+kubelet
+-gerencia the pods lifecycle
+-garante que o container descrito na especificação do pod estão excutando saudáveis
+
+Kube-proxy
+A network proxy
+Manages network rules on nodes
+
+Container Runtime
+em cada node vc vai encontrar um container excutando
+k8s support varios contiaines executando
+Deve implementar o kubernetes container runtime interface
+-Moty
+-Containerd
+Cri-o
+Rkt
+Kata
+
+Node pool
+um node pool é um grupo de maquinas virtuais, todoas com o mesmo tamanho
+um cluster pode ter multiplos pode pools
+ -estes pods pode hospedar diferentes tamnahos de VMs
+ -cada poll pode ser autoescalado independentemente dos outros pools
+docker e limitado a 1 node
+
+Pods
+-Atomic unit of the smallest unit of work of k8s
+Encapsulates an application's container
+Represents a unit of deployment
+Pods can run one or multiple containers
+Containers within a pod share[ Ip address space, mounted volumes]
+Containers within a pod can communicae via { Localhost, IPC
+Pods are ephemeral
+Deploying a pod is an atomic operation , it succeed or not
+If a pod fail , it is replaced with a new one with a shiny new ip address
+You don't update a pod, you replace it with an update version
+you sacale by adding more pods, not more containers in a pod
+Pods são a pates que exeutam um ou mais containers
+
+Se um pod executa multiplos containers existe geralmente um que é o princiapl worker onde sua aplicação logica está localizado e os ouros são caontainers helper que fornece serviços para o principal worker
+
+Pod Lifecycle
+
+Qunado resolve um kubectl creation command para deploy um pod em seu cluster o cli envia informacao ao Api server e esta informacao sera escrita em um etcd. O scheduler vai esperar por esse tipo de informacao olhando nas anotacçoes e descobrindo where agendar o POD e escrever estas informaoes em um etcd. O kubelete executando no Node vai assistir por esta informacao e resolver um commando para criar uma instancia do container dentro de um pod e finalmente o status vai ser escrito no etcd.
+
+Pod deletion
+qunado vc resolver um kubectl delete command para deletar um pod de seu cluster o cli enviam informacoes ao api server
+
+Pod state
+Pending
+ - accepted but not yt created
+Running
+ - bound to a node
+Succeeded
+ - exit with status 0
+Failed
+ - All containers exit and at least one exited with non-zero staus
+unknow
+ - comuication issues with the pod
+crashloopbackoff
+ - sarted, crashed, started agim, and the crashed again
+
+
+kubectl - POD cheat sheet
+
+kubectl create - f [pod-definiion.yml] -> Cria um pod
+kubectl run [odname] --image=busybox -- /bin/sh -c "sleep 3600" -> Executar um pod
+
+kubectl get pods -> Lista os pods em execução
+
+kubectl get pods -o wide -> Mesma coisa com mais informações
+
+
+Init Containers
+iniciar um Pod antes de uma aplicacao container executar
+sempre executa to completion
+cada init contaner must completar sucesso antes do proximo iniciar
+se ele falhar o kubelet repetidamente rstarta ele até ter sucesso
+  - pelo menos sua poliica de restar é definido como nunca
+probes não sao suportados
+ - livenessProbe, readlinessProbe, or startupPobe
+kubectl describe pod[podname] -> Mostra info 
+kubectl get pod [podname] -o yaml > file.yaml -> Extrai a definição do Pod no YAML e salva ele para um arquivo.
+
+kubectl exec -it [podname] -- sh  -> Modo interativo
+kubectl delete -f [pod-definition.yml] -> Delete um pod
+
+
+kubectl delete pod [podname] -> O mesmo usando o pod's name
+
+
+Selectors
+Labels -> key-value pairs used to identity, describe and group related sets of objects or resources
+Selectors use labels to filter or select objects
+
+Multi container
+typical patterns - sidear =>  the helper container providers extra funcionalities to the min worker.
+ex: Vamos dizer que nosso app escreve algum arquivo log dentro do pod. O sidecar pode copiar estes arquivos log para algum storage comprado oferecido pelo cloud provider. Desta maneir o codigo da aplicação localizado dentro do worker principal não está desordenado com o codigo de infraestrutura. O codigo está localizado no helper container. Se voce o codigo de um cloud provider para outra você simplesmente sobstitui oratualiza este codigo . Iso mantem seu codigo de aplicação muito limpo.
+
+Typcal patterns - Adapter
+APP -> Escreve monitoramento complexo de saida
+Adapter -> simplemente monitorando saida por serviço
+o codigo fica no helper container
+
+Typical patterns Ambassador
+App -> Pecisa persistir dados para o database
+Ambassador -> Sabe como escrever para o database
+codigo especifico para o servico esta localzado no helper container
+
+kubectl - pod cheat sheet
+
+kubectl crate -f [pod-definition.yml]  -> create pod
+kubectl exec -it [podname] -c [containername] -- sh -> Exec into a pod
+kubectl logs [podname] -c [containername] -> get logs for a container  
+
+Networkin concepts
+
+All containers within a pod can communicate with each other
+all pods can communicate with each other
+all nodes can communicate with all pods
+Pods are given an Ip addess(ephemeral)
+services are given a persistent ip
+
+Pod networking
+cada pod pega um endereco ip e os containers dentro do pod ccompartilham o mesmo espaco de endereco.container no mesmo pod compartilham  o mesm o endereco ip  mas cada deve ser atribuido uma diferente numero de porta. Eles pode comunicar dentro do pod usando localhost e o numero da porta. Eles também pode compratilhar volumes compartilhado.
+
+Inter Pod communication
+comunicacao entre pods containers não pode se comunicar com outro container fora do pod em outra rede diretamente . eles tem que se comunicar atraves do servico
+
+external access
+load balancer - cloud provider service
+
+
+Workloads
+A workload is an application running on kubernetes
+ -pod
+   - represents a set of  running containeres
+ -ReplicaSet
+ -deployment
+ -statefulset
+ -Deamonset
+   - provide node-local facilities, such as a storage driver or network plugin 
+ -Tasks that  rubn completion
+   - job
+   - conjob
+
+ReplicaSets
+-primary method of managing pod repicas and their kifecycle to provide self-healing capabilities
+-their job is to always ensure the desired number of pods are running
+while you can create replicasets, the recommended way is to create deployments
+
+self-healing 
+Podemos criar tres instancias do Pods que é definido no arquivo YAML em replicas = 3. Significa que se um desses pods cairem é substituido imediatamante automaticamente.
+
+Deployments
+pods não self-heal, scale, updates, rollbacks
+Já deployments, pode!
+
+A deployments manage a single pod template
+you create a deployment for each microservice
+ -frontend
+ -backend
+ -image-processor
+ -credicar-processor
+
+deployments create replicasets in the background
+Don't interage with replicaset directly
+em resumo deployments fornece rolling updates e rollbacks e replicaset self-healing e scalabilidade.s
+
+definicao deplyments
+-replicas
+ -numero de pod instance
+-revisionHistoryunit
+  -numbe of previous iterations to keep
+-strategy
+  RollingUpdate
+    -cycle through updating pods
+  -recreate
+    -all existing pods are killed before new one are created 
+
+DaemonSet
+-Ensures all nodes 9or subsset)run an instance of a pod 
+-Scheduled by thhe scheduler controller and run by the daemon controller
+-as nides are added to the cluster. Pods are added to them
+-Tyical uses
+  -Running a cluster storage daemon
+  -Running a logs colletction daemon on every node
+  -Running a node monitoring daemon on every node
+
+kubectl -daemonset cheat sheet
+
+kubectl apply -f [definition.yaml] -> create a daemonset
+kubectl get ds -> List daemonsets
+kubectl describe ds [rsName] -> get info
+kubectl delete -f [definition.yaml] -> delete daemonset
+kubbectl delete ds[rsname] -> delete usando o nome
+
+Statefuset
+Usamos ara caso complexo de necessidade para escalar dattabase por exemplo em um cenario qeu alguns são somente leitura e eoutros são leitura e escrita
+
+- For Pods that must persist or maintain state
+-Unlike a deployment a statfulset manitain a sticky identity for eah of their pods
+-Each has a persistent identifier(name-x)
+-If  pod dies, it is replaced with another one using the identifier
+-Creates a seies of pods in sequence from ) )0 to X and deletes them from x to 0.
+-Typical uses
+  -stable, unique network identifiers
+  -stable, databases using persistent storage
+-containers are stateless by deign
+-statefulset offers a solution for stateful scenarios
+-a better approach could be to use the Cloud provide database services
+-Deleting a Statefulset will not delete the pvcs(you have to do this manually)
+
+
+kubectl apply -f [definition.yaml] -> create a sttefulset
+kubectl get sts -> List sttefulset
+kubectl describe sts [rsName] -> get info
+kubectl delete -f [definition.yaml] -> delete sttefulset
+kubbectl delete sts[rsname] -> delete usando o nome
+
+Job
+
+-workload for short lived tasks
+-creates one or more Pods and ensures that a specified number of them sucessfully terminate
+-As pods sucessfully complete the job tracks sucessful completions
+-When a specified number of sucessful completions is reached the job completion
+-By default, jobs with more then 1 pod will create them one after the other. To create them at the same time, add paralelism.
+
+kubectl create job [jobname] --image=busybox -> createthe job way imperatve
+kubectl apply -f [definition.yaml] -> create a job way declarative
+kubectl get job -> List jobs
+kubectl describe job [jobName] -> get info
+kubectl delete -f [definition.yaml] -> delete job
+kubbectl delete job[jobname] -> delete usando o nome
+
+
+CronJob
+-An extension of te Job
+-Provides a method of executing jobs ona cron-like schedule
+-Utc-only [ minute, hour, day of the month, month, day of the week..etc]
+
+Para ver e cronjob fooi um sucesso tos que olhar no historico
+.History
+  - The last 3 sucessful jobs are kept
+  - the last failed job is kept
+  - Setting sucessfulljobshistorylimit to zero keeps none
+
+
+kubectl create cronjob [jobname] --image=busybox --schedule="*/1 * * * *" -c "date;" -> createthe cronjob way imperatve
+kubectl apply -f [definition.yaml] -> create a cronjob way declarative
+kubectl get cj -> List cronjobs
+kubectl describe cj [jobName] -> get info
+kubectl delete -f [definition.yaml] -> delete cronjob
+kubbectl delete cj[jobname] -> delete usando o nomecronjob
+
+RollingUpdte
+-deployments
+ -replicas
+  -number of pod instances
+ -revisionHistoryLimit
+  -number of previus iteration to keep
+ -strategy
+  -RollingUpdates
+    -cicle thrugh updating pods
+  -Recreate
+    -all existing pods are killed before new ones are created
+  -maxSurge
+    -maximun number of  pods that can be created over the desired number of pods
+    -value or percentage
+  -maxUnavailable
+    -maximum number of pods that can be unavailable during the update process
+  -Default strategy with maxSurge and maxUnavailable both set to 25%
+
+kubectl-rollingupdates cheat sheet
+
+
+kubectl create cronjob [jobname] --image=busybox --schedule="*/1 * * * *" -c "date;" -> createthe cronjob way imperatve
+kubectl apply -f [definition.yaml] -> update a deployment
+kubectl rollout status -> get the progress of the update
+kubectl rollout history deployment  [eploymentbName] -> get the history of the deployment 
+kubectl rollout undo [deploymentname] -> Rollback a deployment
+kubectl rollout undo [deploymentname] --to-revision=[revision#] -> Rollback to a revision number
+
+Blue-green deployments
+ex: vamos dizer que a versao 2 do nosso microservicos contains algum quebrado como um diferente schema de database. o que fazer? |Usando o rolling update estrategy teriamos ambas versoes 1 e 2 de nosso app executando ao mesmo tempo e isto não pode funcionar tão bem. Assim usando blue-green deployments pattern qu pode ajudar a resolver o problema. Blue identfica qual está em produção e Grenn idemtifica uma nova versao implantada(deployed) atualmente mas não ainda em produção.
+Com o processo de aualização através da identificação da versão no label blue se torna green e green se torna blue. quer dizer que a versão 2 vai para produção enquanto a produção vai para versão 
+
+-Blue-green não resolve totalmente o problema do new shema databas
+-è necessario ver a provisão do tamnh o cluster, pois tem que saber se tem espaço necessario
+
+
+Services
+acessando pods
+qual o problema os serviços tentam resolver? ip epehemero 
+
+- A servie is another type ok k82 object
+- Pod Ips are unreliabe but service ips are
+- Durable( unlike pods)
+  -static ip adress
+  -static dns name
+  -[servcename].[namespace].svc.cluster.local
+  -services are ways to access pod
+  -target pods using selectors
+
+ClusterIP
+-clusterIP is the default service
+-Visibility
+ -cluster internal
+-port
+ -the port the service  is listening to
+-TargetPort
+ -redirecting to the port the pods are listening to
+-Load Balance using round robin
+ -session affinity is configuration
+-When use
+ -To provide a durable way to communicate with pods inside  the cluster
+
+kubectl-clusterip cheat sheet
+-kubectl expose po [podname] --port=80 --target-port=8080 --name=frontend -> Create a service to expose a pod
+kubectl expose depoly [deployname] --port=80 --target-port=8080  -> Create a service to expose a deployment
+kubectl apply -f [definition.yaml] -> deploy the service
+kubectl get svc -> get the service list 
+kubectl get svc -o wide -> get extra info 
+kubectl describe svc [serviceName] -> describe service
+kubectl delete -f [definition.yaml] -> delete service
+kubbectl delete svc[servicename] -> delete usando o nome
+ 
+
+NodePort
+-Nodeport extend the clusterip service
+-visibility
+ -internal and external
+-nodeport
+ -the port the service is listening to externlly
+ -statically defined, or dynamically taken from a range between 300000-32767
+-Port
+ -the port the service is listening to internally
+-TargetPort
+ -redirecting to the port the pod(s) are listenning to
+-Nodes
+ -must hve public ip address
+-Use any Node ip + nodeport to access the service
+
+
+-kubectl expose po [podname] --port=80 --target-port=8080 --type=NodePort -> Create a service to expose a pod
+kubectl expose deploy [deployname] --port=80 --target-port=8080 --type=NodePort --name=frontend -> Create a service to expose a deployment
+kubectl apply -f [definition.yaml] -> deploy the service
+kubectl get svc -> get the service list  
+kubectl get svc -o wide -> get extra info 
+kubectl describe svc [serviceName] -> describe service
+kubectl delete -f [definition.yaml] -> delete service
+kubbectl delete svc[servicename] -> delete usando o nome
+
+
+Load Balancer
+
+layer 4 load balancing
+ -operating at the transport level(tcp)
+ -unable to make decisions based on content
+ -simple algorithms such as round-robin routing
+layer 7 load balancing
+ -operates at the application level (http smtp etc)
+ -able to make decision based on the actual content of each message
+ -more intelligent load balancing decisions and content optimizations
+  -routing roles
+
+Volumes
+we need to store data outside the container in a volume
+Volume let containers store data into external storage systems
+vendors create plugins for their storage systems according to the Container Storage interface
+Two ways to creat storage
+static and dynamic
+
+
+
+storage - the static way
+
+PVC Persistent volumes and claims
+-persistent volumes
+ -represent a storage resource
+ -cluster wide
+ -provisioned by an administrator
+-persitent volue claim
+ -A one-to-one mapping to a persistent volume
+-one or more pods can use a persistent volume claim
+-can be consumed by any of the containers within the pod
+
+Reclaim policies
+Delete
+ -Delete the data upon pods deletion
+  -the default
+ -Retain
+  -keeps the data upon pods deletion
+
+Acess Modes
+-ReadWriteMany
+ -the volume can be mounted as read-write by many pods
+-RedOnlyMany
+ -the volume can be mounted read-only by many pods
+-ReadWriteOnce
+ -The volume can be mounted as read-write by a single pod
+ -the other pods are in read-only mode
+ -the one that has mounted the volume first will be able to write
+
+hostPath is a plugin allowing local storage on the node
+hostPath works only on single-node clusters
+
+Persistent Volume states
+-Available
+  -a free resource that is not yet bound to a claim
+-Bound
+  -the volume is bound to a claim
+-released
+  -the claim has been deleted but the resource is not yet reclaimed by the cluster
+-failed
+  -the volume has failed is automatic reclamation
+
+kubectl apply -f [definition.yaml] -> deploy the v e pvc
+kubectl get pv -> get the pv list  
+kubectl get pvc  -> get pvc list
+kubectl describe pv [pvName] -> describe pv 
+kubectl describe pvc [pvcName] -> describe pvc
+kubectl delete -f [definition.yaml] -> delete pv e pvc
+kubbectl delete pv[servicename] -> dlete pv
+kubbectl delete pvc[servicename] -> delete pvc usando o nome
+
+
+
+Storage - the dynamic way
+
+-Describe the 'classes' of storge offered by the admin
+-An abstraction on top of an extrnal storage resource
+-No need to set a capacity
+-Eliminates the need for admin to pre-provision a persist volume
+
+
+persistentVolume x storageClass
+
+storageClass não precisa definir uma capacidade e multiplos claims pode ser feito
+
+
+
+kubectl apply -f [definition.yaml] -> deploy the storageClass e pvc
+kubectl get sc -> get the storageClass list  
+kubectl get pvc  -> get pvc list
+kubectl describe sc [className] -> describe storageClass 
+kubectl delete -f [definition.yaml] -> delete SC e pvc
+kubbectl delete sc[classname] -> delete sc
+kubbectl delete pvc[servicename] -> delete pvc usando o nome
+
+
+ConfigMaps
+
+-Decouple and externalize configuration
+-Referenced as environment variables
+-Created from
+  -Manifests
+  -Files
+  -Directories (containing one or mre file)
+-static meaning thet if you change values, the containers will have to be restarted to get them
+'|' -> Uasr ete pipe significa usar multi-lines values
+
+ConfigMaps and Volumes
+-Solve the static issue
+-Updates to values are reflected in containers
+-each key/value pair is seen as a file in the mounted directory
+
+kubectl-configMaps cheat sheet
+
+kubectl create configmap literal-example --from-literal="city=Ann Arbor" --from-literal=stte=Michigan -> The imperative way
+kubectl apply -f [cf.yaml] -> the declarative way
+kuubectl create cm [name] --from-file=myconfig.txt -> From a file
+kuubectl create cm [name] --from-file=config/ -> From a folder
+kubectl get cm -> List the configMaps
+kubectl get cm [name] -o YAML -> save a configMaps in a Yaml file
+kubectl delete -f [cf.yaml] -> Delete configMaps
+
+
+Secrets
+
+Bultin Type   
+opaque não é encriptado por padrão
+
+-stored as base64 encoded strings
+-not secure as bases64 strings are not encrypted
+-should you use secrets?
+-protect them using RBAC authorization policies
+-store secret elsewhere
+  -cloud providers offer ways to secure these secrets
+    -azure key vault
+    -aws key management service
+    -google cloud kms
+  -HarshipCorp Vault
+    -https://www.vaultproject.io
+
+kubectl-secrete cheat sheet
+
+kubectl create secret generic [secretnName] --from-literal=STATE=Michigan -> Teh imperative way
+kubectl apply -f [secret.yaml] -> The declarative way
+kubectl get secrets -> List the secrets
+kubectl get secrets [ecretName] -o YAML -> save secret in a YAML file
+kubectl delete -f [secret.yaml] -. Delete a secret
+kubectl delete secrets [secretName] -> Delete a secret
+
+Observality - probes
+
+-startup probes
+  -to know when a container has started
+-readiness probes
+  -to know when a container is ready to accept taffic
+  -a failing readiness probe will stop the applicatin from receiving traffic
+-Liveness probes
+  -indicates whether the code is running or not
+  -a failing liveness probe will restart the container
+
+Probing the container
+-the kubelet checks periodically the containers using probes
+-execAction
+  -execute a command inside the container
+-TCPSocketAction
+  -check if a TCP socket port is open
+-HTTPGetAction
+  -Performs an HTTP GET against a specific port and path
+
+
+
+Horizontal Pod Auto scaling
+
+-uses the k8s metric server
+-pod must have request and limits defined
+-the HPA checks the Metrics Server every 30 seconds
+-scale according to the min and max number or replicas
+-Cooldown/delay
+  -Prevent racing conditions
+  -Once a change has been made, HPA waits
+  -By default, the delay on scale up events is 3 minutes and the delay on scale down event is 5 minutes
+
+HPA cheat sheet
+kubectl autoscale deployment [name] --cpu-percent=50 --min=3 --max=10 -> the imperative way
+kubectl apply -f [hap.yaml] -> the declarative way
+kubectl gett hpa [name] -> get the autoscaler status
+kubectl delete -f [hap.yaml] -> delete the HPA
+kubectl delete hpa [name] -> Delete the HPA
