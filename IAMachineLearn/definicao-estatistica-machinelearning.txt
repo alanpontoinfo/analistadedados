@@ -1,0 +1,26 @@
+Estes termos são medidas estatísticas usadas para descrever o comportamento, a dispersão e a forma como os dados de um conjunto estão distribuídos.
+Variance (Variância)A variância mede o espalhamento dos dados em relação à média.Ela indica o quão distantes os valores estão do valor central.O que significa: 
+Uma variância alta mostra que os dados estão muito dispersos. Uma variância baixa indica que os dados estão concentrados perto da média.
+Skewness (Assimetria)A skewness mede a falta de simetria de uma distribuição de dados.Ela mostra se os dados se concentram mais de um lado e puxam uma "cauda" para o outro.
+O que significa:
+Zero: Os dados são perfeitamente simétricos (como o sino da distribuição normal).
+Positiva (à direita): A cauda é mais longa no lado direito (valores altos).
+Negativa (à esquerda): A cauda é mais longa no lado esquerdo (valores baixos).
+Kurtosis (Curtose)A kurtosis mede o grau de achatamento ou o peso das caudas de uma distribuição.Ela indica se a curva tem um pico muito agudo e caudas pesadas (com muitos valores extremos ou outliers) ou se é mais plana.
+O que significa:
+Leptocúrtica: Curva alta e pontiaguda, com caudas grossas (indica alta chance de valores extremos).
+Mesocúrtica: Curva padrão, semelhante à distribuição normal.
+Platicúrtica: Curva mais achatada, com caudas finas.
+Entropy (Entropia)A entropia mede a incerteza, a desordem ou a quantidade de informação contida em uma variável aleatória.Ela quantifica o grau de imprevisibilidade dos resultados em um conjunto de dados.
+O que significa: 
+Uma entropia alta significa que os dados são totalmente aleatórios e imprevisíveis. 
+Uma entropia baixa indica que há um padrão claro e previsível nos dados.
+
+
+select "name" from "authors" where "id" = (
+    select "author_id" from "authored" where "book-id" = (
+        select "id" from "books"
+        where "title" = 'The Birthday Party'
+    )
+);
+https://www.google.com/search?q=kurtosis+e+skewness+entropy+variance+o+que+significa+na+estatitica&client=firefox-b-d&hs=ezoV&sca_esv=c4ecab8d8e109807&biw=1366&bih=643&sxsrf=APpeQnsfS_a85aYkjEATCxrcBEbkl3yHRQ%3A1787343341904&ei=dLGIaqO5Ft7e1sQP19yL-Ag&uact=5&sclient=gws-wiz-serp&udm=50&fbs=ABfTbFVGaQeaqnsRPI5sOMG32KszkLt6nAp8aiRKj5vMjqZApOc6yfvD6e0PKT-w9T4UNd5LfevPPp_-UkKLMmZR1GPOiZqOM67JyEFeXx8s7WPqFZcI1Eo6yBhDoVoRgXt6cKD-oCm9-B-kOmlYiC2ghS34el4FtDOb9meMgW0VefAwoKmvSp2vnq6qsoTStUpTU_4hkpNr0yd-IxWCcmWu6DPa_nXVVg&aep=10&ntc=1&mstk=AUtExfBpl3XBinU1FfP4Y-mT47zMZK3vRNdNz476bQShUG1OyM6FGvWcVcgHGntAYISAwSEBprFuk4HIj0-p8GnomkhUE-XTU6ybFBgfas_DCxeHPrTYdK_GmS1EejE9o98aLHWnBDtTxdHEfyARAM8ToODygsMLlYKt5Ws&aioh=3&csuir=1&atvm=2&mtid=-rSIavG2MOW85OUPt--WyAM
